@@ -17,8 +17,20 @@ NerfSpiderControl can be used under the Apache License v2.0.
 
 该程序需要在Intel Edison 下面完成编译，编译使用CMake完成，需要具有Mraa库。
 
+```bash
+cd NerfSpiderControl
+mkdir build
+cd build
+cmake ..
+make
+```
+
 ##示例程序
 ```bash
+
+cd NerfSpiderControl
+cd bin
+
 # 炮台旋转控制
 # 参数：（速度：±（0-1），正数为逆时针转，负数为顺时针转）（步数：1-∞的整数）
 ./SampleBarbette 1 20
