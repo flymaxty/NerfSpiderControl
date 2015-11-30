@@ -117,7 +117,7 @@ void NerfSpiderControl::barbetteRotate(float in_speed, float in_theta)
 {
     m_counter = 0;
     barbetteRotate(in_speed);
-    while(m_counter < in_theta);
+    while(m_counter < in_theta*2.15);
     barbetteStop();
     m_counter = 0;
 }
