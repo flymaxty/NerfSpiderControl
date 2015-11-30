@@ -1,21 +1,21 @@
 # NerfSpiderControl
-
 NerfSpiderControl用于控制基于Intel Edison控制板改造的Nerf遥控蜘蛛机器人。
 
-##基本功能
+##License
+NerfSpiderControl can be used under the Apache License v2.0.
 
+##Basic Function
 1. 机器人的行进。
 2. 机器人炮台的旋转和俯仰。
 3. 炮弹的发射。
 4. 激光器的开关。
 
-##License
+##Dependency
+1. mraa 0.8.0
+2. OpenCV 3.0
 
-NerfSpiderControl can be used under the Apache License v2.0.
-
-##软硬件依赖与编译方式
-
-该程序需要在Intel Edison 下面完成编译，编译使用CMake完成，需要具有Mraa库。
+##Compile
+该程序需要在Intel Edison 下面完成编译，编译使用CMake完成。
 
 ```bash
 cd NerfSpiderControl
@@ -25,9 +25,8 @@ cmake ..
 make
 ```
 
-##示例程序
+##Sample
 ```bash
-
 cd NerfSpiderControl
 cd bin
 
@@ -50,5 +49,13 @@ cd bin
 #机器人行进控制，机器人只能朝炮台正方向前进。
 #参数：（速度：0-1，整数）（运动时间：1-∞，整数）
 ./SampleWalk 1 5
-```
 
+##人脸识别，机器人看见人脸后，会朝人脸方向前进。
+##算法不是很稳定，待优化。
+./SampleFaceTrack
+
+##几何图形识别，机器人看见黑色圆形后，会朝其方向行走。
+##相比人脸识别，圆形的识别速度和稳定性都比较好（仍需
+##要改进），相关图片在resource目录里。
+./SampleGeometryDetect
+```
